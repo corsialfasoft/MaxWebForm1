@@ -19,19 +19,20 @@
             <asp:label runat="server">Giacenza</asp:label>
         </div>
     <%foreach(var prodotto in Prodotti){%>
+    <div>
         <div class="col-md-3">
-           <%=prodotto.Codice%>
+            <%=prodotto.Codice%>
         </div>
         <div class="col-md-3">
             <%=prodotto.Descrizione%>
         </div>
         <div class="col-md-3">
-            <%=prodotto.Giacenza%>
-           
+            <%=prodotto.Giacenza%>   
         </div>
-    <br />
+        <div class="col-md-3">
     <asp:button runat="server" Text="Dettaglio" PostBackUrl="~/Dettaglio.aspx?id=<%=prodotto.Codice%>"/>
-       
+            </div>
+       </div>
     <%}
 
     } %>

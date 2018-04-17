@@ -9,7 +9,7 @@ namespace MaxWebForm1
 {
 	public partial class Ricerca : Page
 	{
-		public string ID { get;set;}
+		public string id { get;set;}
 		public string descrizione { get;set;}
 		protected void Page_Load(object sender,EventArgs e)
 		{
@@ -18,14 +18,14 @@ namespace MaxWebForm1
 
 		protected void Unnamed_Click(object sender,EventArgs e)
 		{
-			ID=Codice.Text;
+			id=Codice.Text;
 			descrizione=Descrizione.Text;
 			int codice;
-			if (ID!="" && int.TryParse(ID,out codice)) {
-				var url=String.Format("~/Dettaglio.aspx?id=ID");
+			if (ID!="" && int.TryParse(id,out codice)) {
+				var url=String.Format($"~/Dettaglio.aspx?id={codice}");
 				Response.Redirect(url);
 			}else if(descrizione!="") {
-				var url=String.Format("~/ListaProdotti.aspx?id=descrizione");
+				var url=String.Format($"~/ListaProdotti.aspx?descrizione={descrizione}");
 				Response.Redirect(url);
 			} else {
 				
