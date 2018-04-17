@@ -9,11 +9,15 @@ namespace MaxWebForm1
 {
 	public partial class Carrello : Page
 	{
-		List<Prodotto> prodottos;
+		public List<Prodotto> prodottos;
+		public string Message { get;set;}
 		protected void Page_Load(object sender,EventArgs e)
 		{
 			prodottos = Session["carrello"] as List<Prodotto>;
-			if (prodottos!= null) {
+			if(prodottos == null) {
+				prodottos=new List<Prodotto>();
+			}
+			if (prodottos.Count>0) {
 				for (int j = 0 ; j< prodottos.Count ; j++) {
 					TableRow tableRow = new TableRow();
 					TableCell cell = new TableCell();
@@ -37,7 +41,16 @@ namespace MaxWebForm1
 
 					Table24.Rows.Add(tableRow);
 				}
+			} else {
+				Message="Il carrello è vuoto!";
 			}
+		}
+
+		protected void Svuota_Click(object sender,EventArgs e)
+		{
+			Session["carrello"]=new List<Prodotto>();
+			prodottos=new List<Prodotto>();
+			Message="Il carrello è vuoto!";
 		}
 	}
 	public partial class Dao
