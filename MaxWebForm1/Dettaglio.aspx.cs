@@ -28,14 +28,22 @@ namespace MaxWebForm1
 
 		protected void Aggiungi(object sender,EventArgs e)
 		{
-			dao.Add(prodotto,quantità);
+			int q;
+			List<Prodotto> carrello = Session["carrello"] as List<Prodotto>;
+			if(carrello == null) {
+				carrello = new List<Prodotto>();
+			}
+			int.TryParse(Quantita.Text,out q);
+				prodotto.Quantita= q;
+				carrello.Add(prodotto);
+				Session["carrello"] = prodotto;
 			var url="~/Ricerca.aspx?message=ok";
 			Response.Redirect(url);
 
 		}
 			protected void Indietro(object sender,EventArgs e)
 		{
-			var url="~/Ricerca.aspx?id=ID";
+			var url="~/Ricerca.aspx?";
 			Response.Redirect(url);
 		}
 	}
@@ -44,6 +52,7 @@ namespace MaxWebForm1
 		public int Codice { get;set;}
 		public string Descrizione { get;set;}
 		public int Giacenza { get;set;}
+		public int Quantita { get;set;}
 	}
 	public partial class Dao
 	{
