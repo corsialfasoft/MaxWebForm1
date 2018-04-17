@@ -34,9 +34,9 @@ namespace MaxWebForm1
 				carrello = new List<Prodotto>();
 			}
 			int.TryParse(Quantita.Text,out q);
-				prodotto.Quantita= q;
-				carrello.Add(prodotto);
-				Session["carrello"] = prodotto;
+			prodotto.Quantita= q;
+			carrello.Add(prodotto);
+			Session["carrello"] = carrello;
 			var url="~/Ricerca.aspx?message=ok";
 			Response.Redirect(url);
 
