@@ -30,7 +30,7 @@
             <%=prodotto.Giacenza%>   
         </div>
         <div class="col-md-3">
-    <asp:button runat="server" Text="Dettaglio" PostBackUrl="~/Dettaglio.aspx?id=<%=prodotto.Codice%>"/>
+    <asp:button runat="server" Text="Dettaglio" PostBackUrl="~/Dettaglio.aspx?id=<%{=prodotto.Codice}%>"/>
             </div>
        </div>
     <%}
