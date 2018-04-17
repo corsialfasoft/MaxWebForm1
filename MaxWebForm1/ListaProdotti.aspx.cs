@@ -18,6 +18,23 @@ namespace MaxWebForm1
 			string a = Request["descrizione"];
 			parola = a;
 			Prodotti= dao.SearchProdotti(parola);
+			for (int j=0 ; j < Prodotti.Count; j++) {
+				Prodotto product = Prodotti[j];
+				TableRow tableRow=new TableRow();
+				TableCell tc = new TableCell();
+				Label l1= new Label();
+				l1.Text= product.Codice.ToString();
+
+				TableCell tc2=new TableCell();
+				Label l2 = new Label();
+				l2.Text = product.Descrizione;
+
+				TableCell tc3 = new TableCell();
+				Label l3 = new Label();
+				l3.Text = product.Giacenza.ToString();
+
+			
+			}
 
 		}
 
