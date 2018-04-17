@@ -24,16 +24,29 @@ namespace MaxWebForm1
 				TableCell tc = new TableCell();
 				Label l1= new Label();
 				l1.Text= product.Codice.ToString();
+				tc.Controls.Add(l1);
+				tableRow.Cells.Add(tc);
 
 				TableCell tc2=new TableCell();
 				Label l2 = new Label();
 				l2.Text = product.Descrizione;
+				tc2.Controls.Add(l2);
+				tableRow.Cells.Add(tc2);
 
-				TableCell tc3 = new TableCell();
-				Label l3 = new Label();
-				l3.Text = product.Giacenza.ToString();
+				//TableCell tc3 = new TableCell();
+				//Label l3 = new Label();
+				//l3.Text = product.Giacenza.ToString();
+				//tc3.Controls.Add(l3);
+				//tableRow.Cells.Add(tc3);
 
-			
+				TableCell tc4 = new TableCell();
+				Button bottone = new Button();
+				bottone.PostBackUrl=$"~/Dettaglio.aspx?id={product.Codice}";
+				bottone.Text="Dettaglio Prodotto";
+				tc4.Controls.Add(bottone);
+				tableRow.Cells.Add(tc4);
+
+				Table22.Rows.Add(tableRow);
 			}
 
 		}

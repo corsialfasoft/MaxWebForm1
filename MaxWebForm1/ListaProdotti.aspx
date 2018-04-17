@@ -20,25 +20,15 @@
             <asp:label runat="server">Giacenza</asp:label>
         </div>
         </div>
-    <asp:Table ID="Table" runat="server" CellSpacing="30">
+    <asp:Table
+        ID="Table22" 
+        runat="server" 
+        GridLines="Both" 
+        Font-Names="Verdana" 
+        Font-Size="8pt" 
+        CellPadding="45" 
+        CellSpacing="0">
 
     </asp:Table>
-    <%--<%foreach(var prodotto in Prodotti){%>
-    <div class="row">
-        <div class="col-md-3">
-            <%=prodotto.Codice%>
-        </div>
-        <div class="col-md-3">
-            <%=prodotto.Descrizione%>
-        </div>
-        <div class="col-md-3">
-            <%=prodotto.Giacenza%>   
-        </div>
-        <div class="col-md-3">
-            <asp:button runat="server" Text="Dettaglio" PostBackUrl="~/Dettaglio.aspx?id=<%{=prodotto.Codice}%>"/>
-            </div>
-       </div>
-    <%}--%>
-
-    } %>
+    <%} %>
 </asp:Content>

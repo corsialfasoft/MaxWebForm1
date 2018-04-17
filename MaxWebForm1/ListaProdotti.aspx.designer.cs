@@ -13,12 +13,12 @@ namespace MaxWebForm1 {
     public partial class ListaProdotti {
         
         /// <summary>
-        /// Controllo Table.
+        /// Controllo Table22.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table;
+        protected global::System.Web.UI.WebControls.Table Table22;
     }
 }
