@@ -20,7 +20,7 @@
 
     </asp:Table>
     <div class="row">
-        <asp:Button runat="server" Text="Compra" />
+        <asp:Button runat="server" OnClick="Compra_Click" Text="Compra" />
         <asp:Button runat="server" OnClick="Svuota_Click" Text="Svuota il Carrello" />
         <asp:Button runat="server" Text="Indietro"/>
     </div>
