@@ -41,6 +41,14 @@ namespace MaxWebForm1
 					cell2.Controls.Add(quantita);
 					tableRow.Cells.Add(cell2);
 
+					TableCell cell3 = new TableCell();
+					Button bottone = new Button();
+					bottone.Command += Cancella_Click;
+					bottone.CommandArgument= prodottos[j].Codice.ToString();
+					bottone.Text="Elimina";
+					cell3.Controls.Add(bottone);
+					tableRow.Cells.Add(cell3); 
+
 					Table24.Rows.Add(tableRow);
 				}
 			} else {
@@ -50,9 +58,25 @@ namespace MaxWebForm1
 
 		protected void Svuota_Click(object sender,EventArgs e)
 		{
+			
 			Session["carrello"]=new List<Prodotto>();
 			prodottos=new List<Prodotto>();
 			Message="Il carrello è vuoto!";
+		}
+
+		protected void Cancella_Click(object sender,CommandEventArgs e)
+		{
+			int x ;
+			int.TryParse((string)e.CommandArgument,out x);
+			for (int i=0 ;i<prodottos.Count; i++) {
+				if (prodottos[i].Codice == x) {
+					prodottos.Remove(prodottos[i]);
+				}
+			}
+			Session["carrello"] = prodottos;
+			var url="~/Carrello.aspx";
+			Response.Redirect(url);
+			
 		}
 
 		protected void Compra_Click(object sender,EventArgs e)
