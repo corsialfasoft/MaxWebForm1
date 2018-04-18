@@ -11,6 +11,7 @@ namespace MaxWebForm1
 	{
 		public string id { get;set;}
 		public string descrizione { get;set;}
+		public string Messagge { get;set;}
 		protected void Page_Load(object sender,EventArgs e)
 		{
 
@@ -28,7 +29,7 @@ namespace MaxWebForm1
 				var url=String.Format($"~/ListaProdotti.aspx?descrizione={descrizione}");
 				Response.Redirect(url);
 			} else {
-				
+				Messagge="Inserire dei campi";
 			}
 		}
 	}

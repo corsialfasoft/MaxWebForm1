@@ -10,6 +10,7 @@ namespace MaxWebForm1
 {
 	public partial class ListaProdotti : Page
 	{
+		public string Messaggio { get;set;}
 		public string parola { get;set;}
 		Dao dao = new Dao();
 		public List<Prodotto> Prodotti { get;set;}
@@ -49,8 +50,9 @@ namespace MaxWebForm1
 
 					Table22.Rows.Add(tableRow);
 				}
+			} else {
+				Messaggio="Non è stato trovato nessun elemento";
 			}
-
 		}
 	}
 	public partial class Dao
