@@ -35,13 +35,19 @@ namespace MaxWebForm1
 			}
 			int.TryParse(Quantita.Text,out q);
 			prodotto.Quantita= q;
-			carrello.Add(prodotto);
-			Session["carrello"] = carrello;
-			var url="~/Ricerca.aspx?message=ok";
-			Response.Redirect(url);
-
+			var query = from product in carrello
+			where product.Codice == prodotto.Codice
+			select product;
+			 if(query.FirstOrDefault() != null) {
+				query.FirstOrDefault().Quantita = query.FirstOrDefault().Quantita + q;
+				} else {
+				carrello.Add(prodotto);
+				Session["carrello"] = carrello;
+				var url="~/Ricerca.aspx?message=ok";
+				Response.Redirect(url);
+				}
 		}
-			protected void Indietro(object sender,EventArgs e)
+		protected void Indietro(object sender,EventArgs e)
 		{
 			var url="~/Ricerca.aspx?";
 			Response.Redirect(url);
