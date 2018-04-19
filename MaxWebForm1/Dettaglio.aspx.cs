@@ -95,9 +95,5 @@ namespace MaxWebForm1
 				connection.Dispose();
 				}
 		}
-		public void Add(Prodotto prodotto,int quantita)
-		{
-			//banane
-		}
 	}
 }

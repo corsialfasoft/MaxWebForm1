@@ -131,7 +131,7 @@
     <Content Include="Carrello.aspx" />
     <Content Include="ListaProdotti.aspx" />
     <Content Include="Dettaglio.aspx" />
-    <Content Include="ProductList.ascx" />
+    <Content Include="Controlli\ProductList.ascx" />
     <Content Include="Ricerca.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -213,11 +213,11 @@
     <Compile Include="Dettaglio.aspx.designer.cs">
       <DependentUpon>Dettaglio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductList.ascx.cs">
+    <Compile Include="Controlli\ProductList.ascx.cs">
       <DependentUpon>ProductList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductList.ascx.designer.cs">
+    <Compile Include="Controlli\ProductList.ascx.designer.cs">
       <DependentUpon>ProductList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Ricerca.aspx.cs">

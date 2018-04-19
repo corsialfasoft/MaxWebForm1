@@ -19,38 +19,9 @@ namespace MaxWebForm1
 			if(prodottos == null) {
 				prodottos=new List<Prodotto>();
 			}
+			
 			if (prodottos.Count>0) {
-				for (int j = 0 ; j< prodottos.Count ; j++) {
-					TableRow tableRow = new TableRow();
-					TableCell cell = new TableCell();
-					Label codice = new Label();
-					codice.Text=prodottos[j].Codice.ToString();
-					cell.Controls.Add(codice);
-					tableRow.Cells.Add(cell);
-
-					
-					TableCell cell1 = new TableCell();
-					Label descrizione = new Label();
-					descrizione.Text=prodottos[j].Descrizione;
-					cell1.Controls.Add(descrizione);
-					tableRow.Cells.Add(cell1);
-
-					TableCell cell2 = new TableCell();
-					Label quantita = new Label();
-					quantita.Text=prodottos[j].Quantita.ToString();
-					cell2.Controls.Add(quantita);
-					tableRow.Cells.Add(cell2);
-
-					TableCell cell3 = new TableCell();
-					Button bottone = new Button();
-					bottone.Command += Cancella_Click;
-					bottone.CommandArgument= prodottos[j].Codice.ToString();
-					bottone.Text="Elimina";
-					cell3.Controls.Add(bottone);
-					tableRow.Cells.Add(cell3); 
-
-					Table24.Rows.Add(tableRow);
-				}
+				CarrelloPage.Product=prodottos;
 			} else {
 				Message="Il carrello è vuoto!";
 			}
@@ -64,8 +35,9 @@ namespace MaxWebForm1
 			Message="Il carrello è vuoto!";
 		}
 
-		protected void Cancella_Click(object sender,CommandEventArgs e)
+		public void Cancella_Click(object sender,CommandEventArgs e)
 		{
+			prodottos = (List<Prodotto>)Session["carrello"];
 			int x ;
 			int.TryParse((string)e.CommandArgument,out x);
 			for (int i=0 ;i<prodottos.Count; i++) {
@@ -74,9 +46,6 @@ namespace MaxWebForm1
 				}
 			}
 			Session["carrello"] = prodottos;
-			var url="~/Carrello.aspx";
-			Response.Redirect(url);
-			
 		}
 
 		protected void Compra_Click(object sender,EventArgs e)
@@ -89,7 +58,7 @@ namespace MaxWebForm1
 			Session["carrello"]=new List<Prodotto>();
 			prodottos=new List<Prodotto>();
 			
-				var url=String.Format($"~/Ricerca.aspx");
+				var url=($"~/Ricerca.aspx");
 				Response.Redirect(url);
 		}
 	}

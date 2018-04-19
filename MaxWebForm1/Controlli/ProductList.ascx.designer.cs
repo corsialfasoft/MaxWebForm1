@@ -10,15 +10,15 @@
 namespace MaxWebForm1 {
     
     
-    public partial class Carrello {
+    public partial class ProductList {
         
         /// <summary>
-        /// Controllo CarrelloPage.
+        /// Controllo ProductTable.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::MaxWebForm1.ProductList CarrelloPage;
+        protected global::System.Web.UI.WebControls.Table ProductTable;
     }
 }
