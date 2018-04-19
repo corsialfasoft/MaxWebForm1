@@ -24,10 +24,10 @@ namespace MaxWebForm1
 				descrizione=Descrizione.Text;
 				int codice;
 				if (ID!="" && int.TryParse(id,out codice)) {
-					var url=String.Format($"~/Dettaglio.aspx?id={codice}");
+					var url=($"~/Dettaglio.aspx?id={codice}");
 					Response.Redirect(url);
 				}else if(descrizione!="") {
-					var url=String.Format($"~/ListaProdotti.aspx?descrizione={descrizione}");
+					var url=($"~/ListaProdotti.aspx?descrizione={descrizione}");
 					Response.Redirect(url); 
 				}
 			}
