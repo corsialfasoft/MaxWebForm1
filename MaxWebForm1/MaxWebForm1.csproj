@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Carrello.aspx" />
+    <Content Include="Controlli\DettaglioProdotto.ascx" />
     <Content Include="ListaProdotti.aspx" />
     <Content Include="Dettaglio.aspx" />
     <Content Include="Controlli\ProductList.ascx" />
@@ -198,6 +199,13 @@
     </Compile>
     <Compile Include="Carrello.aspx.designer.cs">
       <DependentUpon>Carrello.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\DettaglioProdotto.ascx.cs">
+      <DependentUpon>DettaglioProdotto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controlli\DettaglioProdotto.ascx.designer.cs">
+      <DependentUpon>DettaglioProdotto.ascx</DependentUpon>
     </Compile>
     <Compile Include="ListaProdotti.aspx.cs">
       <DependentUpon>ListaProdotti.aspx</DependentUpon>

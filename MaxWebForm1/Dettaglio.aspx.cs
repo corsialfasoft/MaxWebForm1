@@ -24,9 +24,7 @@ namespace MaxWebForm1
 			if(prodotto.Codice == 0) {
 				Message= "Nessun prodotto trovato";
 			}
-			codice.Text = prodotto.Codice.ToString();
-			descrizione.Text=prodotto.Descrizione;
-			Giacenza.Text=prodotto.Giacenza.ToString();
+			Prodotto.product=prodotto;
 
 		}
 

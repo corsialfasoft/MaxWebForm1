@@ -7,27 +7,36 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace MaxWebForm1 {
+namespace MaxWebForm1.Controlli {
     
     
     public partial class Dettaglio {
         
         /// <summary>
-        /// Controllo Prodotto.
+        /// Controllo codice.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::MaxWebForm1.Controlli.Dettaglio Prodotto;
+        protected global::System.Web.UI.WebControls.Label codice;
         
         /// <summary>
-        /// Controllo Quantita.
+        /// Controllo descrizione.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Quantita;
+        protected global::System.Web.UI.WebControls.Label descrizione;
+        
+        /// <summary>
+        /// Controllo Giacenza.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Giacenza;
     }
 }
