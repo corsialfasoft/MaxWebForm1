@@ -19,17 +19,25 @@ namespace MaxWebForm1
 
 		protected void Unnamed_Click(object sender,EventArgs e)
 		{
-			id=Codice.Text;
-			descrizione=Descrizione.Text;
-			int codice;
-			if (ID!="" && int.TryParse(id,out codice)) {
-				var url=String.Format($"~/Dettaglio.aspx?id={codice}");
-				Response.Redirect(url);
-			}else if(descrizione!="") {
-				var url=String.Format($"~/ListaProdotti.aspx?descrizione={descrizione}");
-				Response.Redirect(url);
+			if(Page.IsValid) {
+				id=Codice.Text;
+				descrizione=Descrizione.Text;
+				int codice;
+				if (ID!="" && int.TryParse(id,out codice)) {
+					var url=String.Format($"~/Dettaglio.aspx?id={codice}");
+					Response.Redirect(url);
+				}else if(descrizione!="") {
+					var url=String.Format($"~/ListaProdotti.aspx?descrizione={descrizione}");
+					Response.Redirect(url);
+				}
+			}
+		}
+		protected void Controllo(object sender,ServerValidateEventArgs e)
+		{
+			if(Codice.Text != "" || Descrizione.Text != "") {
+				e.IsValid=true;
 			} else {
-				Messagge="Inserire dei campi";
+				e.IsValid=false;
 			}
 		}
 	}
