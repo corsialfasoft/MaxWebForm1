@@ -11,7 +11,7 @@
      <asp:CustomValidator id="CustomValidator1"
            Display="Static"
            ErrorMessage="Inserire almeno uno dei campi!"
-           ForeColor="green"
+           ForeColor="red"
            Font-Names="verdana" 
            Font-Size="10pt"
            OnServerValidate="Controllo"

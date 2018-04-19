@@ -8,6 +8,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
+    <%if(Message != null){ %>
+    <h3><%=Message %></h3>
+    <%} %>
+    <%if (prodotto.Codice != 0){ %>
     <div class="col-md-4">
         <asp:Label runat="server">Codice</asp:Label>
     </div>
@@ -31,10 +35,11 @@
         <asp:Label runat="server">Quantità desiderata</asp:Label>
         </div>
     <div class="col-md-4">
-        <asp:TextBox runat="server" ID="Quantita"></asp:TextBox>
+        <asp:TextBox runat="server" ID="Quantita" TextMode="Number"></asp:TextBox>
     </div><br />
-    <div class="col md-4">
+   
         <asp:Button runat="server" Text="Aggiungi" OnClick="Aggiungi"/>
+   
+    <%} %>
         <asp:Button runat="server" Text="Indietro" OnClick="Indietro"/>
-    </div>
 </asp:Content>

@@ -13,6 +13,7 @@ namespace MaxWebForm1
 	{
 		public int id { get;set;}
 		public int quantità;
+		public string Message { get;set;}
 		Dao dao = new Dao();
 		public Prodotto prodotto { get;set;}
 		protected void Page_Load(object sender,EventArgs e)
@@ -20,6 +21,9 @@ namespace MaxWebForm1
 			int a = int.Parse(Request["id"]);
 			id = a;
 			prodotto= dao.Search(id);
+			if(prodotto.Codice == 0) {
+				Message= "Nessun prodotto trovato";
+			}
 			codice.Text = prodotto.Codice.ToString();
 			descrizione.Text=prodotto.Descrizione;
 			Giacenza.Text=prodotto.Giacenza.ToString();
