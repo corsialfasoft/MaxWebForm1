@@ -28,7 +28,7 @@ namespace MaxWebForm1
 					Response.Redirect(url);
 				}else if(descrizione!="") {
 					var url=String.Format($"~/ListaProdotti.aspx?descrizione={descrizione}");
-					Response.Redirect(url);
+					Response.Redirect(url); 
 				}
 			}
 		}
